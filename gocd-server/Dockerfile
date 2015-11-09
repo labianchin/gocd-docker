@@ -1,4 +1,4 @@
-# Build using: docker build -f Dockerfile.gocd-server -t gocd-server .
+# Build using: docker build -f gocd-server/Dockerfile -t gocd-server .
 FROM phusion/baseimage:0.9.16
 MAINTAINER Aravind SV <arvind.sv@gmail.com>
 
@@ -6,8 +6,8 @@ RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 RUN apt-get update && apt-get install -y -q unzip openjdk-7-jre-headless git
 
 RUN mkdir /etc/service/go-server
-ADD gocd-server/go-common-scripts.sh /etc/service/go-server/go-common-scripts.sh
-ADD gocd-server/go-server-start.sh /etc/service/go-server/run
+ADD go-common-scripts.sh /etc/service/go-server/go-common-scripts.sh
+ADD go-server-start.sh /etc/service/go-server/run
 
 ADD http://download.go.cd/gocd-deb/go-server-15.2.0-2248.deb /tmp/go-server.deb
 

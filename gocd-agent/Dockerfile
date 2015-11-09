@@ -23,6 +23,6 @@ ENV VNC=N
 
 ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
-ADD gocd-agent/go-agent-start.sh /usr/local/bin/go-agent
+ADD go-agent-start.sh /usr/local/bin/go-agent
 
 CMD ["/usr/local/bin/go-agent"]
